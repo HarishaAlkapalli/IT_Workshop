@@ -1,0 +1,196 @@
+user@h8:~$ grep "student" grepfile.txt//{grep=globally search for a regular expression and print matching lines)
+student of rgukt
+user@h8:~$ grep "i" grepfile.txt
+harisha's
+karimanagar city
+kavitha 
+
+user@h8:~/Desktop/IT workshop$ grep -c "h" grepfile.txt//{dispalys the count of lines matchs the pattern}
+2
+
+user@h8:~$ grep -h "hari" grepfile.txt//{Display the matched lines, but do not display the filenames.}
+harisha's
+
+user@h8:~$ grep -n "i" grepfile.txt//{Display the matched lines and their line numbers.}
+1:harisha's
+2:karimanagar city
+
+user@h8:~$ grep  -e "i" -e "a" grepfile.txt//{Specifies expression with this option. Can use multiple times.}
+harisha's
+karimanagar city
+
+user@h8:~$ grep -o "i" grepfile.txt//{:Print only the matched parts of a matching line, with each such part on a separate output line.}
+i
+i
+i
+
+user@h8:~$ cat >month.txt//{creating file}
+feb
+march
+july
+january
+^C
+user@h8:~$ sort -M month.txt//{sort the data in the given file}
+january
+feb
+march
+july
+user@h8:~$ cat >number.txt//{creating number file}
+1937239587
+2
+4
+1
+9
+4
+8
+6
+7
+7
+7
+4
+3
+5
+7
+2
+10
+
+user@h8:~$ sort -n number.txt//{sorting the numbers for given number file}
+1
+2
+2
+3
+4
+4
+4
+5
+6
+7
+7
+7
+7
+8
+9
+10
+1937239587
+
+user@h8:~$ sort -u number.txt//{Sorted on first digit and removes duplicate lines, providing a unique sorted list.}
+1
+10
+1937239587
+2
+3
+4
+5
+6
+7
+8
+9
+
+sort -n number.txt
+user@h8:~$ sort -fw number.txt
+sort: invalid option -- 'w'
+Try 'sort --help' for more information.
+user@h8:~$ sort -f number.txt//{sort by first digit but duplicates are allowed}
+1
+10
+1937239587
+2
+2
+3
+4
+4
+4
+5
+6
+7
+7
+7
+7
+8
+9
+
+user@h8:~$ sort -u number.txt//{Sorts and removes duplicate lines, providing a unique}
+sorted list.
+1
+10
+1937239587
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+user@h8:~$ sed 's/harisha/HARISHA/' grepfile.txt//{replacing the given text in the file-->harisha with HARISHA}
+HARISHA's
+karimanagar city
+student of rgukt
+
+user@h8:~$ sed 's/HARISHA/harisha/' grepfile.txt
+harisha's
+karimanagar city
+student of rgukt
+
+
+user@h8:~$ sed '/harisha/d' grepfile.txt//{removing total line of the core}
+karimanagar city
+student of rgukt
+
+user@h8:~$ sed 's/kavitha/KAVITHA/' grepfile.txt
+harisha's
+karimanagar city
+student of rgukt
+KAVITHA
+
+AWK commands
+user@h8:~$ cat >awk.file//{creating a file with some information like a table}
+hari ceo id 1
+kavi hr id 2
+nag manager id 3
+rishi owner id 4    
+^C
+
+user@h8:~$ awk '{print $1,$2}' awk.file//{here it prints the 1st and 2nd columns}
+hari ceo
+kavi hr
+nag manager
+rishi owner
+user@h8:~$ awk '{print $1,$4}' awk.file//{here it prints the 1st and 4th columns}
+hari 1
+kavi 2
+nag 3
+rishi 4
+user@h8:~$ awk '{print $5,$4}' awk.file//{here it prints the 5th and 4th columns}
+ 1
+ 2
+ 3
+ 4
+user@h8:~$ awk '{print $5,$6}' awk.file//{here 5th and 6th are actually not present in the given file hence it is empty}
+ 
+user@h8:~$ awk '{print n,$4}' awk.file//{prints only 4th column}
+ 1
+ 2
+ 3
+ 4
+user@h8:~$ awk '{print n,$0}' awk.file//{used to get the columns of given value}
+ hari ceo id 1
+ kavi hr id 2
+ nag manager id 3
+ rishi owner id 4
+user@h8:~$ awk '{print n,$0,$3}' awk.file
+ hari ceo id 1 id
+ kavi hr id 2 id
+ nag manager id 3 id
+ rishi owner id 4 id
+user@h8:~$ 
+
+SHUTDOWN commands//{use to shutdown}
+$ shutdown -h//{Requests that the system be either halted or powered off after it has been brought down, with the choice as to which left up to the system}
+$shutdown -p
+$ shutdown -r //{Requests that the system be rebooted after it has been brought down.}
+$ shutdown -r +5//{after given with time}
+$ sudo shutdown 15:00
+$ sudo shutdown +10
