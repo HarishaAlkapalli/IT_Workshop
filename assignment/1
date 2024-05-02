@@ -1,0 +1,145 @@
+\documentclass{article}
+\title{\textbf{WORLD WITH MATHS ONLY}}
+\author{X. BURPS, P. GURPS}
+\date{}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[paperheight=11.5in,paperwidth=6.5in]{geometry}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{fancyhdr}
+\fancyhead[R]{\thepage} 
+\geometry{bottom=4cm}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt} % Remove header line
+%[colorlinks=true,urlcolor=blue]
+\newtheorem{theorem}{Theorem}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{proof}{proof}
+\begin{document}
+	\lfoot{\underline{\hspace*{0.1\paperwidth}}}
+\maketitle
+	
+Abstract. This is a \LaTeX{} template for 18.821, which you can 
+
+use for your own reports.
+	\section{\centering{INTRODUCTION}}
+This brief document shows some examples of the use of \LaTeX{} and
+	indicates some special features of the Math Lab report style. The course website contains links to several \LaTeX{}manuals.
+	End the introduction by describing the contents of the paper sec­
+	tion by section, and which team member(s) wrote each of them. For
+	instance, Section \textcolor{blue}6 discusses referencing, and is written by P. Gurps.
+	\section{\centering{\LaTeX{} Examples}}
+		Here are some ways of producing mathematical symbols. Some are pre-deﬁned either in \LaTeX{} or in the AMS a h n this document n
+		loads. For instance, sums and integrals, $\sum_{i=1}^{n} 1 = n.\int^n_0 x dx={n^2}/{2}$
+			.We’ve deﬁned a few other symbols at the start of the document, for
+		instance \mathbb{N, Q, Z, R}. You can make marginal notes for yourself or your
+		co-authors like this:
+	   	Unﬁnished here?
+		If you want to type.
+		\[\int^1_0 xdx=1/2,\]or\[\sum_{i=1}^{\infty}i=-\frac{1}{12}\]or\[
+	1-1+1-\ldots=\frac{1}{2}.\]
+	\date{February 10, 2013.}
+%	\lfoot{\underline{\hspace*{0.1\paperwidth}}}
+	\newpage
+	\centering{X. BURPS, P. GURPS}
+	
+%	\linebreak
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.4\textwidth]{itpic.png}
+		\caption{My ﬁrst .pdf ﬁgure.}
+	\end{figure}
+If you want a number for an equation, do it like this:
+\begin{align}
+\lim_{x \to \infty}\int^n_{k=1} \frac{1}{k^2}=\frac{\pi}{6}.
+\end{align}
+This can then be referred to as (1), which is much easier than keeping
+track of numbers by hand. To group several equations, aligning on the\newline
+= sign, do it like this:
+\[x_1+2x_2+3x_3=7\]
+y=mx+c
+
+=4x-9.
+
+You can easily embed hyperlinks into the output .pdf document:
+click here for example.
+\section{Images}	
+Figure \textcolor{blue}1 is an example of a .pdf image put into a ﬂoating environ­
+ment, which means LaTeX will draw it wherever there’s enough space
+left in your manuscript. Look at the .tex original to see how to insert
+a ﬁgure like this.
+\section{Theorems and such}
+An example of a “conjecture environment” is given below, in Con­
+jecture \textcolor{blue}{4.1}. Theorems, lemmas, propositions, deﬁnitions, and such all
+use the same command with the appropriate name changed. In fact,
+\newpage
+THE 18.821 REPORT
+
+if you look at the top of this .tex ﬁle, you can see where we’ve deﬁned
+these environments.
+\begin{conjecture}[Vaught's Conjecture]Let $T$ be a countable complete theory. If $T$ has fewer than $2^{\aleph_0}$ many countable models (up to isomorphism), then it has countably many countable models.
+\end{conjecture}
+\begin{theorem}
+	When it rains it pours.
+\end{theorem}
+\begin{proof}
+Well, yes.
+\end{proof}	
+\section{FILETYPES USED BY \LaTeX{}}
+\begin{flushleft}
+	You will write your text as a .tex ﬁle using any text editor (though
+	WYSIWYG editors are troublesome). Traditionally one then runs
+	\LaTeX{}and obtains a \texttt{.dvi} ﬁle, which can be viewed on the screen using a
+	dvi viewer. To include images, and then prepare the ﬁle for printing or
+	submission, one typically translates the \texttt{.dvi} into either \texttt{.ps} (Postscript)	or
+	 \texttt{.pdf}(Adobe PDF).
+	 
+Your report will be submitted as a \texttt{.pdf} document. The \texttt{pdflatex}
+command produces a \texttt{.pdf} ﬁle directly from a \texttt{.tex ﬁle.} This command
+works well with included \texttt{.pdf} ﬁles, but does not handle \texttt{.eps} ﬁles.
+An \texttt{.eps} ﬁle can be converted to a .pdf ﬁle by viewing it and saving
+as a \texttt{.pdf} ﬁle, or by  \texttt{ps2pdf filename.eps,} which produces
+\texttt{filename.pdf}. Under MikTeX with WinEdt, all necessary commands
+will appear under “Accessories” in the WinEdt menu.
+\end{flushleft}
+Finally, Matlab can be made to produce
+ \texttt{.eps} ﬁles by typing
+
+
+ \texttt{print -deps filename} 
+ \begin{flushleft} at the prompt.\end{flushleft}
+ \section{Quoting sources}
+ \begin{flushleft}
+ 	In your work, keep notes of the literature you’ve used, including
+ 	websites. Cite the references you use; failure to do so constitutes pla­
+ 	giarism. Every bibliography item should be referenced somewhere in
+ 	the paper. Quote as precisely as possible: [1, pages 76–78] rather than
+ 	\textcolor{blue}{[1]. [2]} was a useful background reference, too
+.
+	\begingroup \renewcommand{\refname}{\centering {REFERENCES}}
+	\begin{thebibliography}{9}
+		\bibitem{itref}
+		Gurps, P., \emph{Care and feeding of maths professors}. Cambridge Univ. Press, 2008.
+		\bibitem{itref2}
+		Burps, X. \emph{Terrors and errors of project lab}. \emph{Journal of Wildlife and Conservation} 21 (2008), 112--134.
+	\end{thebibliography}
+	\endgroup
+ 
+\end{flushleft}	
+
+ \centering{APPENDIX}
+ 
+Appendices are useful for putting in code or data.
+ \begin{flushleft}
+ MIT OpenCourseWare \\
+\textcolor{blue} {\underline{\url{http://ocw.mit.edu}}} \\*[40]
+%\end{flushleft}
+ 18.821 Project Laboratory in Mathematics \\
+ Spring 2013 \\*[40]
+ For information about citing these materials or our Terms of Use, visit:
+\textcolor{blue} {\underline{ \url{http://ocw.mit.edu/terms}}}.
+\end{flushleft}
+	\end{document}
